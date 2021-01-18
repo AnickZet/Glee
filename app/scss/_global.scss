@@ -1,0 +1,177 @@
+body {
+  @extend %rubik-400;
+  font-size: 16px;    
+  color: $accent;
+  background-color: #fff;
+  line-height: 1.3;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.link {
+  color: $accent;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $link;
+  }
+
+  &:focus {
+    color: $price;
+  }
+
+  &:active {
+    color: $title;
+  }
+}
+
+.btn {
+  @extend %rubik-500;
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: $price;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: $accent;
+  }
+
+  &:focus {
+    background-color: $other;
+  }
+
+  &:active {
+    background-color: $title;
+  }
+}
+
+.slider-img {
+  width: 100%;
+  min-height: 600px;
+  object-fit: cover;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 90%;
+  right: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.slick-dots button {
+ border: none;
+ width: 30px;
+ height: 30px;
+ cursor: pointer;
+ @extend %rubik-500;
+ color: $accent;
+ font-size: 10px;
+ border-radius: 50%;
+ background-color: #fde3cc;
+ margin-right: 10px;
+ transition: background-color 0.3s,color 0.3s;
+  &:hover {
+    background-color: #fff;
+    color: $other;
+  }
+}
+
+.container-inner {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 15px;
+}
+
+.title {
+  color: $title;
+  font-size: 36px;
+  @extend %dmsans-700;
+}
+
+.btn-tbs {
+  border: none;
+  background-color: #fff;
+  @extend %dmsans-700;
+  color: #8b8b8b;
+  cursor: pointer;
+    &:hover {
+      color: $link;
+    }
+
+    &:focus {
+      color: $other;
+    }
+
+    &:active {
+      color: $title;
+    }
+}
+
+.mixitup-control-active {
+  color: #1a1a1a;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+
+  &__link path {
+    transition: fill 0.3s;
+  }
+
+  &__link {
+    margin: 0 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    line-height: 60px;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: $price;
+    }
+    &:hover path {
+      fill: #fff;
+    }
+  }
+
+  &__link--bay {
+    background-color: $price;
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
