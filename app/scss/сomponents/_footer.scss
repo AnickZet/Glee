@@ -1,0 +1,150 @@
+.footer {
+  padding-top: 115px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 55px;
+  }
+
+  &__contact {
+    max-width: 240px;
+    margin-right: 60px;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__column {
+    min-width: 125px;
+    margin-right: 175px;
+  }
+
+  &__title {
+    display: block;
+    @extend %dmsans-700;
+    color: #1f2044;
+    padding: 20px 0;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    font-size: 14px;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    color: $grey;
+  }
+
+  &__new {
+    font-size: 14px;
+    color: $grey;
+    line-height: 1.8;
+  }
+
+  &__new-text {
+    margin-bottom: 30px;
+  }
+
+  &__bottom {
+    border-top: 1px solid #dae4e9;
+    padding: 35px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__copy {
+    font-size: 14px;
+  }
+
+  &__nav-list {
+    display: flex;
+  }
+
+  &__nav-item+.footer__nav-item {
+    border-left: 2px solid $grey;
+  }
+
+  &__nav-item {
+    padding: 0 15px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__nav-link {
+    font-size: 14px;
+    color: $grey;
+  }
+}
+
+.address {
+  font-style: normal;
+  font-size: 14px;
+
+  &__item {
+    margin-bottom: 10px;
+    color: $grey;
+    line-height: 1.8;
+  }
+
+  &__item span {
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    color: $grey;
+  }
+}
+
+.subscribe {
+  display: flex;
+
+  &__email {
+    line-height: 2.5;
+    border: none;
+    max-width: 165px;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    background-color: $bg;
+    transition: all 0.3s;
+    outline: transparent;
+
+    &::placeholder {
+      color: $darkblue;
+      @extend %dmsans-400;
+      font-size: 12px;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 31px -15px $accent;
+    }
+
+    &:focus {
+      border: 1px solid $accent;
+    }
+
+    &:active {
+      background-color: #fff;
+    }
+  }
+
+  &__btn {
+    font-size: 14px;
+    @extend %dmsans-400;
+    padding: 0 20px;
+
+    &::before {
+      background-image: none;
+    }
+  }
+}

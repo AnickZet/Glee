@@ -1,37 +1,38 @@
 $accent: #436372;
-$other: #243f4d;
-$title: #191919;
-$price: #a3bbc8;
-$preprise: #edf1f4;
-$link: #ff0000;
-$footer: #7b7b7b;
+$darkblue: #243f4d;
+$dark: #191919;
+$blue: #a3bbc8;
+$light: #edf1f4;
+$red: #ff0000;
+$grey: #7b7b7b;
+$bg: #fef7f0;
 
 %rubik-400 {
-   font-family: 'Rubik-Regular';
-   font-weight: 400;
+  font-family: 'Rubik-400';
+  font-weight: 400;
 }
 
 %rubik-500 {
-  font-family: 'Rubik-Medium';
+  font-family: 'Rubik-500';
   font-weight: 500;
 }
 
 %dmsans-400 {
-  font-family: 'DMSans-Regular';
+  font-family: 'DMSans-400';
   font-weight: 400;
 }
 
 %dmsans-500 {
-  font-family: 'DMSans-Medium';
+  font-family: 'DMSans-500';
   font-weight: 500;
 }
 
 %dmsans-700 {
-  font-family: 'DMSans-Bold';
+  font-family: 'DMSans-700';
   font-weight: 700;
 }
 
 %poppins-700 {
-  font-family: 'Poppins-Bold';
+  font-family: 'Poppins-700';
   font-weight: 700;
 }

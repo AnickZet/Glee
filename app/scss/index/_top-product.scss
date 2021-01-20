@@ -1,0 +1,35 @@
+.top-product {
+
+  &__item {
+    position: relative;
+  }
+
+  &__inner {
+    position: absolute;
+    max-width: 450px;
+    top: 26%;
+    left: 50%;
+    transform: translateX(-130%);
+  }
+
+  &__title {
+    display: block;
+    @extend %rubik-500;
+    text-transform: uppercase;
+    font-size: 72px;
+    color: $darkblue;
+    margin-bottom: 27px;
+    line-height: 1;
+  }
+
+  &__subtitle {
+    max-width: 370px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    display: block;
+  }
+}
