@@ -1,0 +1,46 @@
+.info {
+  margin-top: -5px;
+
+  &__row {
+    display: flex;
+    background-color: $bg;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 225px;
+    width: 33.333%;
+    min-height: 170px;
+    background-repeat: no-repeat;
+    background-position: 140px 50px;
+  }
+
+  &__title {
+    display: block;
+    @extend %dmsans-700;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    @extend %dmsans-400;
+    max-width: 215px;
+    line-height: 1.8;
+  }
+
+  &__item--support {
+    border-right: 1px solid #e8e4df;
+    background-image: url("../images/icons/support.png");
+  }
+
+  &__item--delivery {
+    border-right: 1px solid #e8e4df;
+    background-image: url("../images/icons/delivery.png");
+  }
+
+  &__item--secure {
+    background-image: url("../images/icons/secure.png");
+  }
+}

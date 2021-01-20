@@ -1,0 +1,148 @@
+.header {
+  padding: 47px 0;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+  padding-left: 200px;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 30px;
+
+    &:hover .roll {
+      opacity: 1;
+    }
+  }
+
+  &__link {
+    @extend %rubik-500;
+    font-size: 15px;
+  }
+
+  &__link-add {
+    background-color: #fff;
+    border: none;
+    padding: 0;
+    outline: transparent;
+    cursor: pointer;
+  }
+}
+
+.roll {
+  opacity: 0;
+  min-width: 80px;
+  background-color: $light;
+  position: absolute;
+  transition: opacity 0.3s;
+  z-index: 10;
+
+  &__item {
+    padding: 0 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}
+
+.header-icon {
+  display: flex;
+
+  &__inner {
+    display: flex;
+    position: relative;
+    margin-left: 20px;
+    width: 178px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #fcd7b6;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 30px;
+      background-color: #fde7d3;
+      left: 50%;
+      top: 20%;
+    }
+  }
+
+  &__link {
+    margin: 0 auto;
+    padding: 16px 25px;
+    position: relative;
+    outline: transparent;
+
+    & path {
+      transition: fill 0.3s;
+    }
+
+    &:focus path {
+      fill: $blue;
+    }
+
+    &:hover path {
+      fill: $red;
+    }
+
+    &:active path {
+      fill: $dark;
+    }
+
+    & span {
+      display: block;
+      position: absolute;
+      top: 20%;
+      right: 23%;
+      width: 15px;
+      height: 15px;
+      padding-top: 1px;
+      text-align: center;
+      border-radius: 50%;
+      @extend %dmsans-500;
+      font-size: 10px;
+      background-color: #fff;
+    }
+
+    &--extra {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      background-color: $light;
+      border-radius: 50%;
+      margin-left: 20px;
+      outline: transparent;
+      transition: all 0.3s;
+
+      &:hover path {
+        fill: #fff;
+      }
+
+      &:focus {
+        border: 1px solid $darkblue;
+      }
+
+      &:hover {
+        background-color: $blue;
+      }
+
+      &:active {
+        background-color: $accent;
+      }
+    }
+  }
+}

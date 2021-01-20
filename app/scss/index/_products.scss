@@ -1,0 +1,102 @@
+.products {
+  padding: 70px 0;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__list-nav {
+    margin-bottom: 75px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 35px;
+  }
+
+  &__item {
+    position: relative;
+    min-width: 250px;
+    min-height: 380px;
+    padding: 30px 0;
+    box-shadow: 0 0 35px 18px #f8f8f8;
+
+    &:hover .products__icon {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    opacity: 0;
+    position: absolute;
+    top: 55%;
+    left: 0;
+    right: 0;
+    transition: opacity 0.3s;
+  }
+
+  &__img {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 70px;
+  }
+
+  &__name {
+    display: block;
+    text-align: center;
+    color: $darkblue;
+    @extend %dmsans-500;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    display: block;
+    text-align: center;
+    @extend %dmsans-700;
+    color: $blue;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+
+    &__link path {
+      transition: fill 0.3s;
+    }
+
+    &__link {
+      display: block;
+      margin: 0 8px;
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50%;
+      background-color: #fff;
+      cursor: pointer;
+      text-align: center;
+      line-height: 60px;
+      transition: all 0.3s;
+      outline: transparent;
+
+      &:hover path {
+        fill: #fff;
+      }
+
+      &:focus {
+        border: 1px solid $blue;
+      }
+
+      &:hover {
+        background-color: $accent;
+      }
+
+      &:active {
+        background-color: $dark;
+      }
+    }
+  }
+}
