@@ -6,6 +6,7 @@ $light: #edf1f4;
 $red: #ff0000;
 $grey: #7b7b7b;
 $bg: #fef7f0;
+$powdery: #feefe2;
 
 %rubik-400 {
   font-family: 'Rubik-400';
@@ -35,4 +36,12 @@ $bg: #fef7f0;
 %poppins-700 {
   font-family: 'Poppins-700';
   font-weight: 700;
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function max($numbers...) {
+  @return m#{i}n(#{$numbers});
 }
