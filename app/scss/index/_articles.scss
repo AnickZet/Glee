@@ -1,0 +1,128 @@
+.articles {
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 113px;
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    @extend %dmsans-700;
+    padding: 0 25px;
+    position: relative;
+
+    &::before {
+      content: ">";
+      position: absolute;
+      right: 0;
+      top: -20%;
+      font-size: 20px;
+    }
+  }
+
+  &__slider {
+    padding: 100px 0;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: -170px;
+      width: 100%;
+      height: 435px;
+      background-color: $bg;
+      z-index: -1;
+    }
+  }
+}
+
+.partner {
+  &__item {
+    padding: 0 50px;
+  }
+}
+
+.news {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &__item {
+    max-width: 370px;
+    min-height: 420px;
+    background-color: #fff;
+
+    &+& {
+      margin-left: 32px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    min-height: 250px;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 170px;
+    padding: 33px 35px 20px;
+
+    &::before {
+      content: "News";
+      position: absolute;
+      top: -10%;
+      left: 8%;
+      text-transform: uppercase;
+      padding: 7px 28px;
+      border-radius: 20px;
+      background-color: $blue;
+      color: #fff;
+      @extend %dmsans-700;
+      line-height: 1;
+    }
+  }
+
+  &__text {
+    padding-bottom: 15px;
+    color: #262626;
+    @extend %dmsans-500;
+    font-size: 18px;
+    flex: 1;
+  }
+
+  &__note {
+    border-top: 1px solid #e0e0e0;
+    color: #222933;
+    font-size: 12px;
+    padding-top: 15px;
+  }
+
+  &__date,
+  &__author {
+    padding-left: 18px;
+    position: relative;
+    text-transform: uppercase;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 2%;
+      top: 2px;
+      background-image: url("../images/icons/file-text.svg");
+      width: 6px;
+      height: 10px;
+    }
+  }
+
+  &__date {
+    margin-right: 30px;
+  }
+}

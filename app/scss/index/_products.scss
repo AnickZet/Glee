@@ -1,20 +1,21 @@
 .products {
-  padding: 70px 0;
+  padding-top: 70px;
 
   &__title {
     margin-bottom: 20px;
   }
 
-  &__list-nav {
+  &__filter {
     margin-bottom: 75px;
   }
+}
 
-  &__row {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 35px;
-  }
+.cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 35px;
+  margin-bottom: 178px;
 
   &__item {
     position: relative;
@@ -23,24 +24,15 @@
     padding: 30px 0;
     box-shadow: 0 0 35px 18px #f8f8f8;
 
-    &:hover .products__icon {
+    &:hover .icon {
       opacity: 1;
     }
   }
 
-  &__icon {
-    opacity: 0;
-    position: absolute;
-    top: 55%;
-    left: 0;
-    right: 0;
-    transition: opacity 0.3s;
-  }
-
   &__img {
     margin: 0 auto;
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    min-height: 200px;
     object-fit: contain;
     margin-bottom: 70px;
   }
@@ -59,43 +51,126 @@
     @extend %dmsans-700;
     color: $blue;
   }
+}
 
-  .icon {
-    display: flex;
-    justify-content: center;
 
-    &__link path {
+.icon {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  top: 55%;
+  left: 0;
+  right: 0;
+  transition: opacity 0.3s;
+
+  &__link {
+    display: block;
+    margin: 0 8px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+    line-height: 3.5;
+    transition: all 0.3s;
+    outline: transparent;
+
+    path {
       transition: fill 0.3s;
     }
 
-    &__link {
-      display: block;
-      margin: 0 8px;
-      width: 50px;
-      height: 50px;
-      border: none;
-      border-radius: 50%;
-      background-color: #fff;
-      cursor: pointer;
-      text-align: center;
-      line-height: 60px;
-      transition: all 0.3s;
-      outline: transparent;
+    &:hover path {
+      fill: #fff;
+    }
 
-      &:hover path {
-        fill: #fff;
-      }
+    &:focus {
+      border: 1px solid $blue;
+    }
 
-      &:focus {
-        border: 1px solid $blue;
-      }
+    &:hover {
+      background-color: $accent;
+    }
 
-      &:hover {
-        background-color: $accent;
-      }
+    &:active {
+      background-color: $dark;
+    }
+  }
+}
 
-      &:active {
-        background-color: $dark;
+.chosen {
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+    max-width: 870px;
+    min-height: 390px;
+    width: 100%;
+    padding: 83px 0;
+    background-color: $powdery;
+
+    &+& {
+      margin-left: 30px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    max-width: 235px;
+    min-height: 400px;
+    left: 16%;
+    top: -25%;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 300px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 145px;
+  }
+
+  &__title {
+    line-height: 1.2;
+    @extend %dmsans-700;
+    font-size: 26px;
+    color: $darkblue;
+    margin-bottom: 15px;
+  }
+
+  &__subtitle {
+    line-height: 1.8;
+    color: $darkblue;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    color: #556f7b;
+    background-color: $powdery;
+    border: 1px solid #b3b7b5;
+    border-radius: 5px;
+    max-width: 180px;
+
+    &::before {
+      background-image: url("../images/icons/arrow-btn-dark.svg");
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+
+      &::before {
+        background-image: url("../images/icons/arrow-btn.svg");
       }
     }
   }
