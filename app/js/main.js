@@ -4,7 +4,7 @@ $(function () {
     dots: true
   });
 
-  $(".partner").slick({
+  $(".partner__inner").slick({
     arrows: false,
     dots: false,
     slidesToShow: 5,

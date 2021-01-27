@@ -8,76 +8,70 @@
   &__filter {
     margin-bottom: 75px;
   }
+
+  &__new {
+    min-height: 525px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+    margin-bottom: 122px;
+  }
 }
 
 .new {
-  min-height: 525px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 30px;
-  margin-bottom: 122px;
-
-  &__item {
-    padding: 40px 35px;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-
-  &__title {
-    max-width: 175px;
-    @extend %dmsans-700;
-    font-size: 20px;
-    color: $dark;
-    margin-bottom: 5px;
-  }
-
-  &__text {
-    @extend %dmsans-700;
-    color: $blue;
-  }
-}
-
-.video {
-  background-image: url("../images/video.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  min-height: 500px;
   position: relative;
+  max-width: 370px;
+  min-height: 245px;
 
-  &__play {
+  &__link {
     position: absolute;
-    height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
     transition: all 0.3s;
-
-    &:hover circle {
-      transition: fill 0.3s;
-    }
+    border: 1px solid transparent;
+    outline: transparent;
 
     &:focus {
       border: 1px solid $red;
 
-      circle {
-        fill: $red;
+      .new__text {
+        color: $red;
       }
     }
 
     &:hover {
-      background-color: rgba(29, 25, 25, 0.445);
-
-      circle {
-        fill: $red;
-      }
+      background-color: rgba(29, 25, 25, 0.123);
     }
 
     &:active {
-      background-color: rgba(148, 20, 20, 0.521);
+      background-color: rgba(29, 25, 25, 0.445);
     }
+  }
+
+  &__img {
+    position: relative;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: absolute;
+    @extend %dmsans-700;
+    top: 35px;
+    left: 35px;
+  }
+
+  &__title {
+    max-width: 175px;
+    font-size: 20px;
+    color: $dark;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    color: $blue;
+    transition: color 0.3s;
   }
 }

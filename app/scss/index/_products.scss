@@ -8,25 +8,25 @@
   &__filter {
     margin-bottom: 75px;
   }
+
+  &__cards {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 35px;
+    margin-bottom: 178px;
+  }
 }
 
 .cards {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 35px;
-  margin-bottom: 178px;
+  position: relative;
+  min-width: 250px;
+  min-height: 380px;
+  padding: 30px 0;
+  box-shadow: 0 0 35px 18px #f8f8f8;
 
-  &__item {
-    position: relative;
-    min-width: 250px;
-    min-height: 380px;
-    padding: 30px 0;
-    box-shadow: 0 0 35px 18px #f8f8f8;
-
-    &:hover .icon {
-      opacity: 1;
-    }
+  &:hover .icon {
+    opacity: 1;
   }
 
   &__img {
@@ -110,10 +110,11 @@
 
   &__item {
     position: relative;
+    display: flex;
+    justify-content: center;
     max-width: 870px;
     min-height: 390px;
     width: 100%;
-    padding: 83px 0;
     background-color: $powdery;
 
     &+& {
@@ -122,11 +123,11 @@
   }
 
   &__img {
-    position: absolute;
+    position: relative;
     max-width: 235px;
     min-height: 400px;
-    left: 16%;
-    top: -25%;
+    top: -20%;
+    margin-right: 30px;
   }
 
   &__inner {
@@ -135,8 +136,6 @@
     justify-content: center;
     max-width: 300px;
     height: 100%;
-    margin-left: auto;
-    margin-right: 145px;
   }
 
   &__title {
@@ -151,27 +150,5 @@
     line-height: 1.8;
     color: $darkblue;
     margin-bottom: 30px;
-  }
-
-  &__link {
-    color: #556f7b;
-    background-color: $powdery;
-    border: 1px solid #b3b7b5;
-    border-radius: 5px;
-    max-width: 180px;
-
-    &::before {
-      background-image: url("../images/icons/arrow-btn-dark.svg");
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: #fff;
-
-      &::before {
-        background-image: url("../images/icons/arrow-btn.svg");
-      }
-    }
   }
 }

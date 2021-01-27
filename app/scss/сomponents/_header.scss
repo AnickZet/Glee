@@ -2,14 +2,16 @@
   padding: 47px 0;
 
   &__wrap {
+    position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
 }
 
 .menu {
-  padding-left: 200px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 
   &__list {
     display: flex;
@@ -19,7 +21,8 @@
     margin-right: 30px;
 
     &:hover .roll {
-      opacity: 1;
+      width: 100%;
+      transition: width 3s;
     }
   }
 
@@ -38,11 +41,12 @@
 }
 
 .roll {
-  opacity: 0;
-  min-width: 80px;
+  max-width: 80px;
+  width: 0;
+  overflow: hidden;
   background-color: $light;
   position: absolute;
-  transition: opacity 0.3s;
+  transition: width 1s;
   z-index: 10;
 
   &__item {
@@ -56,6 +60,8 @@
 }
 
 .header-icon {
+  position: absolute;
+  right: 0;
   display: flex;
 
   &__inner {
