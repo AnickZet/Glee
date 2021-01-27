@@ -3,6 +3,7 @@
 .idea/*
 .vscode
 .tmp
+.stylelintrc
 *.sublime
 .sass-cache
 components

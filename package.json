@@ -22,6 +22,7 @@
     "gulp-ttf2woff2": "^3.0.0",
     "gulp-uglify-es": "^2.0.0",
     "jquery": "^3.5.1",
+    "lint-staged": "^10.5.3",
     "mixitup": "^3.3.1"
   },
   "dependencies": {

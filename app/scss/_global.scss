@@ -79,6 +79,28 @@ body {
   &:active {
     background-color: $dark;
   }
+
+  &--transparent {
+    color: #556f7b;
+    background-color: transparent;
+    border: 1px solid #b3b7b5;
+    border-radius: 5px;
+    max-width: 180px;
+
+    &::before {
+      background-image: url("../images/icons/arrow-btn-dark.svg");
+    }
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: #fff;
+
+      &::before {
+        background-image: url("../images/icons/arrow-btn.svg");
+      }
+    }
+  }
 }
 
 .title {
@@ -107,7 +129,7 @@ body {
     color: #8b8b8b;
     cursor: pointer;
     outline: transparent;
-    transition: all 0.3s;
+    transition: color 0.3s;
 
     &:focus {
       color: $red;
@@ -121,10 +143,10 @@ body {
       color: $dark;
     }
   }
-}
 
-.mixitup-control-active {
-  color: #1a1a1a;
+  .mixitup-control-active {
+    color: #1a1a1a;
+  }
 }
 
 .sr-only {
