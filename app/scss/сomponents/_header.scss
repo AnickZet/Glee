@@ -1,11 +1,24 @@
 .header {
   padding: 47px 0;
 
+  @media (max-width: $xl) {
+    position: relative;
+  }
+
   &__wrap {
     position: relative;
     display: flex;
     align-items: center;
+
+    @media (max-width: $xl) {
+      position: static;
+    }
   }
+}
+
+.logo {
+  position: absolute;
+  z-index: 2;
 }
 
 .menu {
@@ -13,12 +26,38 @@
   left: 50%;
   transform: translateX(-50%);
 
+  &.menu--active {
+    transform: translateY(0%);
+    transition: transform 1s;
+  }
+
+  @media (max-width: $xl) {
+    display: block;
+    padding-top: 150px;
+    background-color: $powdery;
+    text-align: center;
+    top: -50px;
+    left: 0;
+    right: 0;
+    transform: translateX(0) translateY(-200%);
+    transition: transform 1s;
+    z-index: 1;
+  }
+
   &__list {
     display: flex;
+
+    @media (max-width: $xl) {
+      display: block;
+    }
   }
 
   &__item {
     margin-right: 30px;
+
+    @media (max-width: $xl) {
+      margin: 10px auto;
+    }
 
     &:hover .roll {
       width: 100%;
@@ -29,14 +68,30 @@
   &__link {
     @extend %rubik-500;
     font-size: 15px;
+
+    @media (max-width: $xl) {
+      padding: 10px 0;
+      display: block;
+    }
+
+    &:hover {
+      @media (max-width: $xl) {
+        background-color: #fff;
+      }
+    }
+
   }
 
   &__link-add {
-    background-color: #fff;
+    background-color: transparent;
     border: none;
     padding: 0;
     outline: transparent;
     cursor: pointer;
+
+    @media (max-width: $xl) {
+      display: none;
+    }
   }
 }
 
@@ -48,6 +103,10 @@
   position: absolute;
   transition: width 1s;
   z-index: 10;
+
+  @media (max-width: $xl) {
+    display: none;
+  }
 
   &__item {
     padding: 0 5px;
@@ -64,6 +123,11 @@
   right: 0;
   display: flex;
 
+  @media (max-width: $xl) {
+    padding-right: 15px;
+    z-index: 1;
+  }
+
   &__inner {
     display: flex;
     position: relative;
@@ -72,6 +136,10 @@
     height: 50px;
     border-radius: 50px;
     background-color: #fcd7b6;
+
+    @media (max-width: $sm) {
+      display: none;
+    }
 
     &::after {
       content: "";
@@ -118,6 +186,10 @@
       margin-left: 20px;
       outline: transparent;
       transition: all 0.3s;
+
+      @media (max-width: $md) {
+        display: none;
+      }
 
       &:hover path {
         fill: #fff;

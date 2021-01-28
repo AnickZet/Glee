@@ -5,11 +5,29 @@
     align-items: center;
     padding-top: 113px;
     margin-bottom: 40px;
+
+    @media (max-width: $xl) {
+      padding-top: 60px;
+    }
+
+    @media (max-width: $sm) {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin-right: 15px;
+
+    @media (max-width: $sm) {
+      margin-bottom: 15px;
+    }
   }
 
   &__link {
     @extend %dmsans-700;
-    padding: 0 25px;
+    padding-right: 25px;
     position: relative;
 
     &::before {
@@ -24,6 +42,11 @@
   &__news {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $xl) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 }
 
@@ -33,8 +56,29 @@
   min-height: 420px;
   transition: background-color 0.3s;
 
+  @media (max-width: $xl) {
+    margin-bottom: 15px;
+    background-color: rgba(29, 25, 25, 0.123);
+  }
+
+  @media (max-width: $sm) {
+    min-width: 320px;
+  }
+
   &+& {
     margin-left: 32px;
+
+    @media (max-width: $xl) {
+      margin-left: 15px;
+    }
+
+    @media (max-width: $lg) {
+      margin-left: 5px;
+    }
+
+    @media (max-width: $md) {
+      margin-left: 0;
+    }
   }
 
   &__link {
