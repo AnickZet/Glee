@@ -1,12 +1,24 @@
 .products {
   padding-top: 70px;
 
+  @media (max-width: $lg) {
+    padding-top: 50px;
+  }
+
   &__title {
     margin-bottom: 20px;
   }
 
   &__filter {
     margin-bottom: 75px;
+
+    @media (max-width: $lg) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: $md) {
+      margin-bottom: 20px;
+    }
   }
 
   &__cards {
@@ -15,15 +27,37 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 35px;
     margin-bottom: 178px;
+
+    @media (max-width: $xl) {
+      grid-gap: 15px;
+      margin-bottom: 100px;
+    }
+
+    @media (max-width: $lg) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: $md) {
+      margin-bottom: 50px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: $sm) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
 .cards {
   position: relative;
   min-width: 250px;
-  min-height: 380px;
+  max-height: 380px;
   padding: 30px 0;
   box-shadow: 0 0 35px 18px #f8f8f8;
+
+  @media (max-width: $xl) {
+    min-width: 200px;
+  }
 
   &:hover .icon {
     opacity: 1;
@@ -35,6 +69,16 @@
     min-height: 200px;
     object-fit: contain;
     margin-bottom: 70px;
+
+    @media (max-width: $lg) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: $md) {
+      max-width: 150px;
+      max-height: 150px;
+      margin-bottom: 80px;
+    }
   }
 
   &__name {
@@ -64,6 +108,10 @@
   right: 0;
   transition: opacity 0.3s;
 
+  @media (max-width: $xl) {
+    opacity: 1;
+  }
+
   &__link {
     display: block;
     margin: 0 8px;
@@ -78,6 +126,10 @@
     line-height: 3.5;
     transition: all 0.3s;
     outline: transparent;
+
+    @media (max-width: $xl) {
+      border: 1px solid $blue;
+    }
 
     path {
       transition: fill 0.3s;
@@ -106,6 +158,10 @@
   &__wrap {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $sm) {
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
@@ -117,8 +173,29 @@
     width: 100%;
     background-color: $powdery;
 
+    @media (max-width: $xl) {
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: $md) {
+      min-height: 320px;
+    }
+
+    @media (max-width: $sm) {
+      margin-bottom: 15px;
+    }
+
     &+& {
       margin-left: 30px;
+
+      @media (max-width: $xl) {
+        margin-left: 15px;
+      }
+
+      @media (max-width: $sm) {
+        margin-left: 0;
+      }
     }
   }
 
@@ -128,6 +205,17 @@
     min-height: 400px;
     top: -20%;
     margin-right: 30px;
+
+    @media (max-width: $xl) {
+      position: static;
+      padding: 70px 0;
+      margin-right: 15px;
+      max-width: 150px;
+    }
+
+    @media (max-width: $md) {
+      display: none;
+    }
   }
 
   &__inner {
@@ -135,7 +223,12 @@
     flex-direction: column;
     justify-content: center;
     max-width: 300px;
+    padding-right: 20px;
     height: 100%;
+
+    @media (max-width: $xl) {
+      max-width: 200px;
+    }
   }
 
   &__title {
@@ -144,6 +237,10 @@
     font-size: 26px;
     color: $darkblue;
     margin-bottom: 15px;
+
+    @media (max-width: $xl) {
+      font-size: 20px;
+    }
   }
 
   &__subtitle {

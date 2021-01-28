@@ -12,6 +12,21 @@
   align-items: center;
   outline: transparent;
 
+  @media (max-width: $xl) {
+    min-height: 400px;
+  }
+
+  @media (max-width: $md) {
+    min-height: 300px;
+  }
+
+  svg {
+    @media (max-width: $md) {
+      height: 100px;
+      width: 100px;
+    }
+  }
+
   circle {
     transition: fill 0.3s;
   }

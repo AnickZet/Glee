@@ -8,6 +8,24 @@
     position: absolute;
     max-width: 450px;
     top: 26%;
+
+    @media (max-width: $xl) {
+      margin-left: 50px;
+      top: 20%;
+    }
+
+    @media (max-width: $lg) {
+      max-width: 300px;
+    }
+
+    @media (max-width: $md) {
+      max-width: 250px;
+      margin-left: 10px;
+    }
+
+    @media (max-width: $sm) {
+      max-width: 100px;
+    }
   }
 
   &__title {
@@ -17,6 +35,22 @@
     color: $darkblue;
     margin-bottom: 27px;
     line-height: 1;
+
+    @media (max-width: $xl) {
+      font-size: 52px;
+    }
+
+    @media (max-width: $lg) {
+      font-size: 30px;
+    }
+
+    @media (max-width: $md) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: $sm) {
+      font-size: 24px;
+    }
   }
 
   &__subtitle {
@@ -24,10 +58,18 @@
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 40px;
+
+    @media (max-width: $md) {
+      display: none;
+    }
   }
 
   &__link {
     display: block;
+
+    @media (max-width: $sm) {
+      display: none;
+    }
   }
 
   &__img {
@@ -45,7 +87,6 @@
   bottom: 6%;
   right: 0;
   left: 0;
-  z-index: 5;
 
   li {
     button {
@@ -61,6 +102,11 @@
       margin-right: 10px;
       transition: all 0.3s;
       outline: transparent;
+
+      @media (max-width: $sm) {
+        width: 20px;
+        height: 20px;
+      }
 
       &:focus {
         background-color: #fff;
