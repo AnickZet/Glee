@@ -1,6 +1,6 @@
 .partner {
-  padding: 100px 0;
   position: relative;
+  padding: 100px 0;
 
   @media (max-width: $xl) {
     padding: 80px 0;
@@ -17,13 +17,13 @@
   &::before {
     content: "";
     position: absolute;
-    right: 0;
     left: 0;
+    right: 0;
     top: -170px;
+    z-index: -5;
     width: 100%;
     min-height: 435px;
     background-color: $bg;
-    z-index: -5;
 
     @media (max-width: $xl) {
       top: 0;

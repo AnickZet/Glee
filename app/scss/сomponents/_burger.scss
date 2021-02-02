@@ -1,52 +1,52 @@
 .burger {
   display: none;
-  margin: 10px;
-  height: 30px;
   border: none;
+  padding: 7px;
+  width: 44px;
+  height: 44px;
   background-color: transparent;
-  padding: 0;
 
   @media (max-width: $xl) {
     display: block;
   }
 
   &__line {
+    position: relative;
     display: block;
-    width: 35px;
+    width: 30px;
     height: 2px;
     background-color: $dark;
-    position: relative;
 
     &::after,
     &::before {
       content: "";
       position: absolute;
-      width: 35px;
+      left: 0;
+      width: 30px;
       height: 2px;
       background-color: $dark;
-      left: 0;
       transition: transform 0.3s;
-    }
-
-    &::after {
-      top: 10px;
     }
 
     &::before {
       bottom: 10px;
     }
 
+    &::after {
+      top: 10px;
+    }
+
     &--active {
       background-color: transparent;
 
-      &::after {
-        transform: rotate(45deg);
-        top: 0;
+      &::before {
+        bottom: 0;
+        transform: rotate(-45deg);
       }
 
-      &::before {
-        transform: rotate(-45deg);
-        bottom: 0;
+      &::after {
+        top: 0;
+        transform: rotate(45deg);
       }
     }
   }

@@ -1,14 +1,15 @@
 .articles {
+  padding-top: 113px;
+
+  @media (max-width: $xl) {
+    padding-top: 60px;
+  }
+
   &__inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-top: 113px;
+    justify-content: space-between;
     margin-bottom: 40px;
-
-    @media (max-width: $xl) {
-      padding-top: 60px;
-    }
 
     @media (max-width: $sm) {
       flex-wrap: wrap;
@@ -26,9 +27,9 @@
   }
 
   &__link {
-    @extend %dmsans-700;
-    padding-right: 25px;
     position: relative;
+    padding-right: 25px;
+    @extend %dmsans-700;
 
     &::before {
       content: ">";
@@ -52,42 +53,39 @@
 
 .news {
   position: relative;
+  z-index: -1;
+  margin-right: 32px;
+  border-radius: 5px;
   min-width: 370px;
   min-height: 420px;
+  background-color: #fff;
   transition: background-color 0.3s;
 
   @media (max-width: $xl) {
+    margin-right: 15px;
     margin-bottom: 15px;
-    background-color: rgba(29, 25, 25, 0.123);
+    border: 1px solid #e0e0e0;
+  }
+
+  @media (max-width: $lg) {
+    margin-right: 5px;
+  }
+
+  @media (max-width: $md) {
+    margin-right: 0;
   }
 
   @media (max-width: $sm) {
     min-width: 320px;
   }
 
-  &+& {
-    margin-left: 32px;
-
-    @media (max-width: $xl) {
-      margin-left: 15px;
-    }
-
-    @media (max-width: $lg) {
-      margin-left: 5px;
-    }
-
-    @media (max-width: $md) {
-      margin-left: 0;
-    }
-  }
-
   &__link {
     position: absolute;
+    outline: transparent;
+    border: 1px solid transparent;
     width: 100%;
     height: 100%;
     transition: all 0.3s;
-    border: 1px solid transparent;
-    outline: transparent;
 
     &:focus {
       border: 1px solid $red;
@@ -109,72 +107,77 @@
   &__img {
     position: relative;
     z-index: -1;
+    border-radius: 5px 5px 0 0;
     width: 100%;
-    min-height: 250px;
+    height: 100%;
+    max-height: 250px;
     object-fit: cover;
   }
 
   &__content {
-    z-index: -1;
-    background-color: #fff;
     position: relative;
+    z-index: -1;
     display: flex;
     flex-direction: column;
-    min-height: 170px;
     padding: 33px 35px 20px;
+    min-height: 170px;
 
     &::before {
       content: "News";
       position: absolute;
-      top: -10%;
       left: 8%;
-      text-transform: uppercase;
-      padding: 7px 28px;
+      top: -10%;
       border-radius: 20px;
-      background-color: $blue;
-      color: #fff;
-      @extend %dmsans-700;
+      padding: 7px 28px;
       line-height: 1;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: $blue;
+      @extend %dmsans-700;
     }
   }
 
   &__text {
+    flex: 1 1 auto;
+    overflow: hidden;
     margin-bottom: 15px;
     max-height: 70px;
-    overflow: hidden;
-    color: #262626;
-    @extend %dmsans-500;
     font-size: 18px;
-    flex: 1 1 auto;
+    color: #262626;
     transition: color 0.3s;
+    @extend %dmsans-500;
   }
 
   &__note {
     border-top: 1px solid #e0e0e0;
-    color: #222933;
-    font-size: 12px;
     padding-top: 15px;
+    font-size: 12px;
+    color: #222933;
+  }
+
+  &__date {
+    margin-right: 30px;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 
   &__date,
   &__author {
-    padding-left: 18px;
     position: relative;
-    text-transform: uppercase;
     display: inline-block;
+    padding-left: 18px;
+    text-transform: uppercase;
 
     &::before {
       content: "";
       position: absolute;
       left: 2%;
       top: 2px;
-      background-image: url("../images/icons/file-text.svg");
       width: 6px;
       height: 10px;
+      background-image: url("../images/icons/file-text.svg");
     }
-  }
-
-  &__date {
-    margin-right: 30px;
   }
 }

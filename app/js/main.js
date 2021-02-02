@@ -4,6 +4,10 @@ $(function () {
     dots: true
   });
 
+  $(".menu__link-add").on("click", function () {
+    $(this).toggleClass("menu__link-add--active")
+  })
+
   $(".burger, .menu a").on("click", function () {
     $(".burger__line").toggleClass("burger__line--active")
     $(".menu").toggleClass("menu--active")

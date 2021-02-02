@@ -3,43 +3,44 @@ $darkblue: #243f4d;
 $dark: #191919;
 $blue: #a3bbc8;
 $light: #edf1f4;
-$red: #ff0000;
+$red: #f00;
 $grey: #7b7b7b;
 $bg: #fef7f0;
 $powdery: #feefe2;
 
+// @media
 $sm: 480px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 
 %rubik-400 {
-  font-family: 'Rubik';
+  font-family: "Rubik";
   font-weight: 400;
 }
 
 %rubik-500 {
-  font-family: 'Rubik';
+  font-family: "Rubik";
   font-weight: 500;
 }
 
 %dmsans-400 {
-  font-family: 'DMSans';
+  font-family: "DMSans";
   font-weight: 400;
 }
 
 %dmsans-500 {
-  font-family: 'DMSans';
+  font-family: "DMSans";
   font-weight: 500;
 }
 
 %dmsans-700 {
-  font-family: 'DMSans';
+  font-family: "DMSans";
   font-weight: 700;
 }
 
 %poppins-700 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 700;
 }
 

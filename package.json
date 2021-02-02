@@ -18,12 +18,17 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.1.0",
+    "gulp-stylelint": "^13.0.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^3.0.0",
     "gulp-uglify-es": "^2.0.0",
     "jquery": "^3.5.1",
     "lint-staged": "^10.5.3",
-    "mixitup": "^3.3.1"
+    "mixitup": "^3.3.1",
+    "stylelint": "^13.9.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",

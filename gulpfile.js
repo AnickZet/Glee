@@ -9,17 +9,18 @@ const imagemin = require('gulp-imagemin');
 const del = require('del');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const ttf2woff = require('gulp-ttf2woff');
+const gulpStylelint = require('gulp-stylelint');
 
 function browsersync() {
-	browserSync.init({
-		server: {
-			baseDir: 'app/'
-		}
-	});
+  browserSync.init({
+    server: {
+      baseDir: 'app/'
+    }
+  });
 };
 
 function cleanDist() {
-	return del('dist')
+  return del('dist')
 
 };
 
@@ -33,68 +34,74 @@ function fonts() {
 };
 
 function images() {
-	return src('app/images/**/*')
-		.pipe(imagemin(
-			[
-				imagemin.gifsicle({ interlaced: true }),
-				imagemin.mozjpeg({ quality: 75, progressive: true }),
-				imagemin.optipng({ optimizationLevel: 5 }),
-				imagemin.svgo({
-					plugins: [
-						{ removeViewBox: true },
-						{ cleanupIDs: false }
-					]
-				})
-			]
-		))
-		.pipe(dest('dist/images'))
+  return src('app/images/**/*')
+    .pipe(imagemin(
+      [
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.mozjpeg({ quality: 75, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+        imagemin.svgo({
+          plugins: [
+            { removeViewBox: true },
+            { cleanupIDs: false }
+          ]
+        })
+      ]
+    ))
+    .pipe(dest('dist/images'))
 
 };
 
 function scripts() {
-	return src([
-		'node_modules/jquery/dist/jquery.js',
-		'node_modules/mixitup/dist/mixitup.js',
-		'node_modules/slick-carousel/slick/slick.js',
-		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
-		'app/js/main.js'
-	])
-		.pipe(concat('main.min.js'))
-		.pipe(uglify())
-		.pipe(dest('app/js'))
-		.pipe(browserSync.stream())
+  return src([
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/mixitup/dist/mixitup.js',
+    'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+    'app/js/main.js'
+  ])
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
+    .pipe(dest('app/js'))
+    .pipe(browserSync.stream())
 };
 
 
 function styles() {
-	return src('app/scss/style.scss')
-		.pipe(scss({ outputStyle: 'compressed' }))
-		.pipe(concat('style.min.css'))
-		.pipe(autoprefixer({
-			overrideBrowserslist: ['last 10 version'],
-			grid: true
-		}))
-		.pipe(dest('app/css'))
-		.pipe(browserSync.stream())
+  return src('app/scss/**/*.scss')
+    .pipe(gulpStylelint({
+      reporters: [{
+        formatter: 'string',
+        console: true
+      }]
+    }))
+    .pipe(scss({ outputStyle: 'compressed' }))
+    .pipe(concat('style.min.css'))
+    .pipe(autoprefixer({
+      overrideBrowserslist: ['last 10 version'],
+      grid: true
+    }))
+    .pipe(dest('app/css'))
+    .pipe(browserSync.stream())
 
 };
 
 function build() {
-	return src([
-		'app/css/style.min.css',
-		'app/fonts/**/*.woff',
-		'app/fonts/**/*.woff2',
-		'app/js/main.min.js',
-		'app/*.html'
-	], { base: 'app' })
-		.pipe(dest('dist'))
+  return src([
+    'app/css/style.min.css',
+    'app/fonts/**/*.woff',
+    'app/fonts/**/*.woff2',
+    'app/js/main.min.js',
+    'app/*.html'
+  ], { base: 'app' })
+    .pipe(dest('dist'))
 };
 
 function wathing() {
-	watch(['app/scss/**/*.scss'], styles);
-	watch(['app/fonts/**/*.ttf'], fonts);
-	watch(['app/**/*.js', '!app/js/main.min.js'], scripts);
-	watch(['app/*.html']).on('change', browserSync.reload);
+  watch(['app/scss/**/*.scss'], styles);
+  watch(['app/fonts/**/*.ttf'], fonts);
+  watch(['app/**/*.js', '!app/js/main.min.js'], scripts);
+  watch(['app/*.html']).on('change', browserSync.reload);
 };
 
 exports.styles = styles;
