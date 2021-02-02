@@ -10,18 +10,28 @@
     justify-content: space-between;
     margin-bottom: 55px;
 
-    @media (max-width: $md) {
-      justify-content: center;
+    @media (max-width: $lg) {
+      display: block;
+      text-align: center;
     }
 
     @media (max-width: $sm) {
-      flex-wrap: wrap;
       margin-bottom: 30px;
     }
   }
 
   &__contact {
-    max-width: 240px;
+    min-width: 300px;
+
+    @media (max-width: $lg) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: $md) {
+      margin-bottom: 15px;
+    }
   }
 
   &__logo {
@@ -29,27 +39,41 @@
     display: block;
     margin-bottom: 20px;
 
-    @media (max-width: $sm) {
+    @media (max-width: $lg) {
       margin-bottom: 10px;
     }
   }
 
   &__column {
     padding-top: 20px;
-    min-width: 125px;
+    min-width: 300px;
+
+    @media (max-width: $xl) {
+      min-width: 150px;
+    }
+
+    @media (max-width: $lg) {
+      display: inline-block;
+      vertical-align: top;
+    }
 
     @media (max-width: $md) {
-      display: none;
+      margin: 0 auto;
+    }
+
+    @media (max-width: $sm) {
+      margin-bottom: 15px;
+      text-align: center;
     }
   }
 
   &__title {
-    line-height: 1.8;
     display: block;
-    @extend %dmsans-700;
-    color: #1f2044;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
+    line-height: 1.8;
     text-transform: uppercase;
+    color: #1f2044;
+    @extend %dmsans-700;
 
     @media (max-width: $sm) {
       margin-bottom: 10px;
@@ -62,27 +86,43 @@
 
   &__item {
     margin-bottom: 15px;
+
+    @media (max-width: $lg) {
+      margin-bottom: 5px;
+    }
   }
 
   &__link {
     color: $grey;
+
+    @media (max-width: $lg) {
+      display: block;
+      padding: 13px 0;
+    }
   }
 
   &__new {
-    max-width: 240px;
     padding-top: 20px;
+    min-width: 268px;
+
+    @media (max-width: $xl) {
+      margin: 0 auto;
+      max-width: 200px;
+    }
   }
 
   &__new-text {
+    margin-bottom: 32px;
+    font-size: 14px;
     line-height: 1.8;
-    margin-bottom: 28px;
+    color: $grey;
   }
 
   &__bottom {
-    border-top: 1px solid #dae4e9;
-    padding: 35px 0;
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid #dae4e9;
+    padding: 35px 0;
 
     @media (max-width: $md) {
       display: block;
@@ -109,18 +149,23 @@
   &__nav-item {
     padding: 0 15px;
 
-    &+& {
-      border-left: 2px solid $grey;
-    }
-
     &:last-child {
       padding-right: 0;
+    }
+
+    & + & {
+      border-left: 1px solid $grey;
     }
   }
 
   &__nav-link {
     font-size: 14px;
     color: $grey;
+
+    @media (max-width: $lg) {
+      display: block;
+      padding: 13px 5px;
+    }
   }
 }
 
@@ -130,8 +175,14 @@
 
   &__item {
     margin-bottom: 10px;
-    color: $grey;
+    max-width: 195px;
     line-height: 1.8;
+    color: $grey;
+
+    @media (max-width: $lg) {
+      margin-bottom: 20px;
+      max-width: 300px;
+    }
   }
 
   &__text {
@@ -139,28 +190,35 @@
   }
 
   &__link {
-    display: inline-block;
     font-size: 14px;
     color: $grey;
+
+    @media (max-width: $lg) {
+      padding: 14px 0;
+    }
   }
 }
 
 .subscribe {
+  display: flex;
 
   &__email {
-    line-height: 2.2;
-    border: none;
-    max-width: 150px;
-    padding: 0 15px;
+    outline: transparent;
     border: 1px solid transparent;
+    padding: 0 15px;
+    max-width: 170px;
+    line-height: 2.2;
     background-color: $bg;
     transition: all 0.3s;
-    outline: transparent;
+
+    @media (max-width: $lg) {
+      min-height: 44px;
+    }
 
     &::placeholder {
+      font-size: 12px;
       color: $darkblue;
       @extend %dmsans-400;
-      font-size: 12px;
     }
 
     &:focus {
@@ -168,7 +226,7 @@
     }
 
     &:hover {
-      box-shadow: 0px 0px 31px -15px $accent;
+      box-shadow: 0 0 31px -15px $accent;
     }
 
     &:active {
@@ -177,10 +235,9 @@
   }
 
   &__btn {
+    padding: 8px 18px;
     font-size: 14px;
     @extend %dmsans-400;
-    padding: 8px 10px;
-    max-width: 100px;
 
     &::before {
       background-image: none;

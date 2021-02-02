@@ -22,12 +22,12 @@
   }
 
   &__new {
-    min-height: 525px;
     display: grid;
+    grid-gap: 30px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 30px;
     margin-bottom: 122px;
+    min-height: 525px;
 
     @media (max-width: $xl) {
       grid-gap: 15px;
@@ -35,8 +35,8 @@
     }
 
     @media (max-width: $md) {
-      margin-bottom: 50px;
       grid-template-columns: 1fr 1fr;
+      margin-bottom: 50px;
     }
 
     @media (max-width: $sm) {
@@ -45,28 +45,22 @@
   }
 }
 
-.new {
+.new-collection {
   position: relative;
-  max-width: 370px;
   min-height: 245px;
+  max-width: 370px;
 
   @media (max-width: $sm) {
     max-width: 500px;
   }
 
-
-
   &__link {
     position: absolute;
+    outline: transparent;
+    border: 1px solid transparent;
     width: 100%;
     height: 100%;
     transition: all 0.3s;
-    border: 1px solid transparent;
-    outline: transparent;
-
-    @media (max-width: $xl) {
-      background-color: rgba(29, 25, 25, 0.123);
-    }
 
     &:focus {
       border: 1px solid $red;
@@ -87,9 +81,11 @@
 
   &__img {
     position: relative;
-    min-height: 100%;
     z-index: -1;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
 
     @media (max-width: $sm) {
       width: 100%;
@@ -99,21 +95,21 @@
 
   &__content {
     position: absolute;
-    @extend %dmsans-700;
-    top: 35px;
     left: 35px;
+    top: 35px;
+    @extend %dmsans-700;
 
     @media (max-width: $xl) {
-      top: 20px;
       left: 25px;
+      top: 20px;
     }
   }
 
   &__title {
+    margin-bottom: 15px;
     max-width: 175px;
     font-size: 20px;
     color: $dark;
-    margin-bottom: 15px;
 
     @media (max-width: $xl) {
       margin-bottom: 10px;
@@ -123,9 +119,5 @@
   &__text {
     color: $blue;
     transition: color 0.3s;
-
-    @media (max-width: $xl) {
-      color: $red;
-    }
   }
 }

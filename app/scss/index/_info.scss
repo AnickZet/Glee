@@ -4,22 +4,29 @@
   &__row {
     display: flex;
     background-color: $bg;
+
+    @media (max-width: $md) {
+      display: block;
+    }
   }
 
   &__item {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    border-right: 1px solid #e8e4df;
     width: 33.333%;
     min-height: 170px;
-    border-right: 1px solid #e8e4df;
 
-    @media (max-width: $lg) {
+    @media (max-width: $md) {
+      border-right: none;
+      border-bottom: 1px solid #e8e4df;
+      width: 100%;
       min-height: 120px;
     }
 
     @media (max-width: $sm) {
-      min-height: 90px;
+      min-height: 100px;
     }
 
     &:last-child {
@@ -28,24 +35,30 @@
   }
 
   &__content {
-    max-width: 300px;
-    padding-left: 75px;
     position: relative;
+    padding-left: 75px;
+    max-width: 300px;
 
     @media (max-width: $lg) {
-      padding: 0;
+      padding-top: 60px;
+      padding-left: 0;
     }
 
     @media (max-width: $md) {
-      max-width: 150px;
-      text-align: center;
+      padding-top: 0;
+      padding-left: 75px;
+      max-width: 400px;
+    }
+
+    @media (max-width: $sm) {
+      max-width: 300px;
     }
 
     &::after {
       content: "";
       position: absolute;
-      top: 0;
       left: 0;
+      top: 0;
       width: 70px;
       height: 70px;
       background-repeat: no-repeat;
@@ -62,22 +75,13 @@
     &--secure::after {
       background-image: url("../images/icons/secure.png");
     }
-
-    &--support::after,
-    &--delivery::after,
-    &--secure::after {
-      @media (max-width: $lg) {
-        background-image: inherit;
-      }
-    }
   }
-
 
   &__title {
     display: block;
-    @extend %dmsans-700;
-    font-size: 18px;
     margin-bottom: 10px;
+    font-size: 18px;
+    @extend %dmsans-700;
 
     @media (max-width: $lg) {
       margin-bottom: 5px;
@@ -89,16 +93,17 @@
   }
 
   &__text {
-    @extend %dmsans-400;
     max-width: 215px;
     line-height: 1.8;
+    @extend %dmsans-400;
 
     @media (max-width: $lg) {
       line-height: 1.4;
     }
 
     @media (max-width: $md) {
-      display: none;
+      padding-right: 10px;
+      max-width: 400px;
     }
   }
 }

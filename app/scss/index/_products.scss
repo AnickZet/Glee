@@ -23,10 +23,10 @@
 
   &__cards {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 35px;
-    margin-bottom: 178px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 192px;
 
     @media (max-width: $xl) {
       grid-gap: 15px;
@@ -38,8 +38,8 @@
     }
 
     @media (max-width: $md) {
-      margin-bottom: 50px;
       grid-template-columns: 1fr 1fr;
+      margin-bottom: 50px;
     }
 
     @media (max-width: $sm) {
@@ -48,64 +48,63 @@
   }
 }
 
-.cards {
+.card {
   position: relative;
+  padding: 30px 0;
   min-width: 250px;
   max-height: 380px;
-  padding: 30px 0;
   box-shadow: 0 0 35px 18px #f8f8f8;
 
   @media (max-width: $xl) {
     min-width: 200px;
   }
 
-  &:hover .icon {
-    opacity: 1;
-  }
-
   &__img {
     margin: 0 auto;
-    max-width: 200px;
-    min-height: 200px;
-    object-fit: contain;
     margin-bottom: 70px;
+    min-height: 200px;
+    max-width: 200px;
+    object-fit: contain;
 
     @media (max-width: $lg) {
       margin-bottom: 50px;
     }
 
     @media (max-width: $md) {
+      margin-bottom: 80px;
       max-width: 150px;
       max-height: 150px;
-      margin-bottom: 80px;
     }
   }
 
   &__name {
     display: block;
+    margin-bottom: 10px;
     text-align: center;
     color: $darkblue;
     @extend %dmsans-500;
-    margin-bottom: 10px;
   }
 
   &__price {
     display: block;
     text-align: center;
-    @extend %dmsans-700;
     color: $blue;
+    @extend %dmsans-700;
+  }
+
+  &:hover .icon {
+    opacity: 1;
   }
 }
 
-
 .icon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 55%;
   display: flex;
   justify-content: center;
   opacity: 0;
-  position: absolute;
-  top: 55%;
-  left: 0;
-  right: 0;
   transition: opacity 0.3s;
 
   @media (max-width: $xl) {
@@ -115,17 +114,16 @@
   &__link {
     display: block;
     margin: 0 8px;
+    outline: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
-    border: none;
-    border-radius: 50%;
-    border: 1px solid transparent;
-    background-color: #fff;
-    cursor: pointer;
-    text-align: center;
     line-height: 3.5;
+    text-align: center;
+    background-color: #fff;
     transition: all 0.3s;
-    outline: transparent;
+    cursor: pointer;
 
     @media (max-width: $xl) {
       border: 1px solid $blue;
@@ -135,12 +133,12 @@
       transition: fill 0.3s;
     }
 
-    &:hover path {
-      fill: #fff;
-    }
-
     &:focus {
       border: 1px solid $blue;
+    }
+
+    &:hover path {
+      fill: #fff;
     }
 
     &:hover {
@@ -154,12 +152,11 @@
 }
 
 .chosen {
-
   &__wrap {
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: $sm) {
+    @media (max-width: $lg) {
       flex-wrap: wrap;
     }
   }
@@ -168,14 +165,19 @@
     position: relative;
     display: flex;
     justify-content: center;
-    max-width: 870px;
-    min-height: 390px;
+    margin-right: 30px;
     width: 100%;
+    min-height: 390px;
+    max-width: 870px;
     background-color: $powdery;
 
     @media (max-width: $xl) {
-      max-width: 450px;
+      margin-right: 15px;
+    }
+
+    @media (max-width: $lg) {
       margin: 0 auto;
+      margin-bottom: 15px;
     }
 
     @media (max-width: $md) {
@@ -186,66 +188,75 @@
       margin-bottom: 15px;
     }
 
-    &+& {
-      margin-left: 30px;
-
-      @media (max-width: $xl) {
-        margin-left: 15px;
+    &:last-child {
+      margin-right: 0;
+      @media (max-width: $lg) {
+        margin: 0 auto;
       }
-
-      @media (max-width: $sm) {
-        margin-left: 0;
-      }
-    }
-  }
-
-  &__img {
-    position: relative;
-    max-width: 235px;
-    min-height: 400px;
-    top: -20%;
-    margin-right: 30px;
-
-    @media (max-width: $xl) {
-      position: static;
-      padding: 70px 0;
-      margin-right: 15px;
-      max-width: 150px;
-    }
-
-    @media (max-width: $md) {
-      display: none;
     }
   }
 
   &__inner {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 300px;
+    margin-left: auto;
     padding-right: 20px;
-    height: 100%;
+    max-width: 350px;
+  }
+
+  &__img {
+    position: absolute;
+    top: -90px;
+    min-height: 400px;
+    max-width: 240px;
+    object-fit: cover;
+    object-position: center;
 
     @media (max-width: $xl) {
-      max-width: 200px;
+      position: static;
+      margin: 0 15px;
+      padding: 70px 0;
+      max-width: 150px;
+    }
+
+    @media (max-width: $sm) {
+      padding: 35px 0;
     }
   }
 
   &__title {
-    line-height: 1.2;
-    @extend %dmsans-700;
-    font-size: 26px;
-    color: $darkblue;
     margin-bottom: 15px;
+    font-size: 26px;
+    line-height: 1.2;
+    color: $darkblue;
+    @extend %dmsans-700;
 
-    @media (max-width: $xl) {
+    @media (max-width: $md) {
       font-size: 20px;
+    }
+
+    @media (max-width: $sm) {
+      font-size: 18px;
     }
   }
 
   &__subtitle {
+    margin-bottom: 30px;
     line-height: 1.8;
     color: $darkblue;
-    margin-bottom: 30px;
+
+    @media (max-width: $sm) {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
   }
 }
