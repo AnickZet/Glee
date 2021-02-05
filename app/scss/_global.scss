@@ -56,12 +56,12 @@ body {
   cursor: pointer;
   @extend %rubik-500;
 
-  @media (max-width: $md) {
+  @include _768 {
     padding: 12px 25px;
     width: 150px;
   }
 
-  @media (max-width: $sm) {
+  @include _480 {
     padding: 12px 15px;
     width: 110px;
   }
@@ -77,7 +77,7 @@ body {
     background-repeat: no-repeat;
     transform: translateY(-50%);
 
-    @media (max-width: $md) {
+    @include _768 {
       display: none;
     }
   }
@@ -123,12 +123,12 @@ body {
   color: $dark;
   @extend %dmsans-700;
 
-  @media (max-width: $xl) {
+  @include _1200 {
     font-size: 26px;
   }
 }
 
-.filter {
+.mix-filter {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,11 +142,11 @@ body {
     background-color: $blue;
   }
 
-  @media (max-width: $lg) {
+  @include _992 {
     flex-wrap: wrap;
   }
 
-  @media (max-width: $sm) {
+  @include _480 {
     flex-wrap: nowrap;
     justify-content: flex-start;
     overflow-x: scroll;
@@ -171,7 +171,7 @@ body {
     cursor: pointer;
     @extend %dmsans-700;
 
-    @media (max-width: $lg) {
+    @include _992 {
       display: block;
       padding: 12px;
     }
