@@ -8,11 +8,29 @@ $grey: #7b7b7b;
 $bg: #fef7f0;
 $powdery: #feefe2;
 
-// @media
-$sm: 480px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
+@mixin _1200 {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin _992 {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin _768 {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin _480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
 
 %rubik-400 {
   font-family: "Rubik";

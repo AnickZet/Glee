@@ -6,8 +6,15 @@
   height: 44px;
   background-color: transparent;
 
-  @media (max-width: $xl) {
+  @include _1200 {
     display: block;
+  }
+
+  @include _768 {
+    position: absolute;
+    right: 0;
+    top: -110%;
+    margin-right: 20px;
   }
 
   &__line {

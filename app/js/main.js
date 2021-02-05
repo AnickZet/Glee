@@ -1,12 +1,12 @@
 $(function () {
-  $(".top-product__slider").slick({
+  $(".top-slider__wrapper").slick({
     arrows: false,
     dots: true
   });
 
   $(".menu__link-add").on("click", function () {
     $(this).toggleClass("menu__link-add--active")
-  })
+  });
 
   $(".burger, .menu a").on("click", function () {
     $(".burger__line").toggleClass("burger__line--active")

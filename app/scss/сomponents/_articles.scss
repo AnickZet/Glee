@@ -1,7 +1,7 @@
 .articles {
   padding-top: 113px;
 
-  @media (max-width: $xl) {
+  @include _1200 {
     padding-top: 60px;
   }
 
@@ -11,7 +11,7 @@
     justify-content: space-between;
     margin-bottom: 40px;
 
-    @media (max-width: $sm) {
+    @include _480 {
       flex-wrap: wrap;
       justify-content: center;
       margin-bottom: 20px;
@@ -21,7 +21,7 @@
   &__title {
     margin-right: 15px;
 
-    @media (max-width: $sm) {
+    @include _480 {
       margin-bottom: 15px;
     }
   }
@@ -40,20 +40,19 @@
     }
   }
 
-  &__news {
+  &__cards {
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: $xl) {
+    @include _1200 {
       flex-wrap: wrap;
       justify-content: center;
     }
   }
 }
 
-.news {
+.articles-card {
   position: relative;
-  z-index: -1;
   margin-right: 32px;
   border-radius: 5px;
   min-width: 370px;
@@ -61,21 +60,21 @@
   background-color: #fff;
   transition: background-color 0.3s;
 
-  @media (max-width: $xl) {
+  @include _1200 {
     margin-right: 15px;
     margin-bottom: 15px;
     border: 1px solid #e0e0e0;
   }
 
-  @media (max-width: $lg) {
+  @include _992 {
     margin-right: 5px;
   }
 
-  @media (max-width: $md) {
+  @include _768 {
     margin-right: 0;
   }
 
-  @media (max-width: $sm) {
+  @include _480 {
     min-width: 320px;
   }
 
@@ -96,17 +95,16 @@
     }
 
     &:hover {
-      background-color: rgba(29, 25, 25, 0.123);
+      background-color: rgba(29, 25, 25, 0.1);
     }
 
     &:active {
-      background-color: rgba(29, 25, 25, 0.445);
+      background-color: rgba(29, 25, 25, 0.4);
     }
   }
 
   &__img {
     position: relative;
-    z-index: -1;
     border-radius: 5px 5px 0 0;
     width: 100%;
     height: 100%;
@@ -116,25 +114,23 @@
 
   &__content {
     position: relative;
-    z-index: -1;
     display: flex;
     flex-direction: column;
     padding: 33px 35px 20px;
     min-height: 170px;
+  }
 
-    &::before {
-      content: "News";
-      position: absolute;
-      left: 8%;
-      top: -10%;
-      border-radius: 20px;
-      padding: 7px 28px;
-      line-height: 1;
-      text-transform: uppercase;
-      color: #fff;
-      background-color: $blue;
-      @extend %dmsans-700;
-    }
+  &__category {
+    position: absolute;
+    left: 8%;
+    top: -10%;
+    border-radius: 20px;
+    padding: 7px 28px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: $blue;
+    @extend %dmsans-700;
   }
 
   &__text {
@@ -157,6 +153,16 @@
 
   &__date {
     margin-right: 30px;
+
+    &::before {
+      background-image: url("../images/icons/calendar.svg");
+    }
+  }
+
+  &__author {
+    &::before {
+      background-image: url("../images/icons/user.svg");
+    }
   }
 
   &:last-child {
@@ -167,17 +173,16 @@
   &__author {
     position: relative;
     display: inline-block;
-    padding-left: 18px;
+    padding-left: 22px;
     text-transform: uppercase;
 
     &::before {
       content: "";
       position: absolute;
-      left: 2%;
-      top: 2px;
-      width: 6px;
-      height: 10px;
-      background-image: url("../images/icons/file-text.svg");
+      left: 0;
+      top: -2px;
+      width: 17px;
+      height: 17px;
     }
   }
 }

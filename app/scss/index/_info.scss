@@ -5,7 +5,7 @@
     display: flex;
     background-color: $bg;
 
-    @media (max-width: $md) {
+    @include _768 {
       display: block;
     }
   }
@@ -18,14 +18,14 @@
     width: 33.333%;
     min-height: 170px;
 
-    @media (max-width: $md) {
+    @include _768 {
       border-right: none;
       border-bottom: 1px solid #e8e4df;
       width: 100%;
       min-height: 120px;
     }
 
-    @media (max-width: $sm) {
+    @include _480 {
       min-height: 100px;
     }
 
@@ -39,18 +39,18 @@
     padding-left: 75px;
     max-width: 300px;
 
-    @media (max-width: $lg) {
+    @include _992 {
       padding-top: 60px;
       padding-left: 0;
     }
 
-    @media (max-width: $md) {
+    @include _768 {
       padding-top: 0;
       padding-left: 75px;
       max-width: 400px;
     }
 
-    @media (max-width: $sm) {
+    @include _480 {
       max-width: 300px;
     }
 
@@ -79,29 +79,35 @@
 
   &__title {
     display: block;
+    overflow: hidden;
     margin-bottom: 10px;
+    max-width: 220px;
+    max-height: 45px;
     font-size: 18px;
     @extend %dmsans-700;
 
-    @media (max-width: $lg) {
+    @include _992 {
       margin-bottom: 5px;
     }
 
-    @media (max-width: $sm) {
+    @include _480 {
+      max-height: 40px;
       font-size: 16px;
     }
   }
 
   &__text {
+    overflow: hidden;
     max-width: 215px;
+    max-height: 80px;
     line-height: 1.8;
     @extend %dmsans-400;
 
-    @media (max-width: $lg) {
-      line-height: 1.4;
+    @include _992 {
+      max-height: 65px;
     }
 
-    @media (max-width: $md) {
+    @include _768 {
       padding-right: 10px;
       max-width: 400px;
     }

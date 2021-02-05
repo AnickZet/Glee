@@ -1,7 +1,7 @@
 .footer {
   padding-top: 53px;
 
-  @media (max-width: $sm) {
+  @include _480 {
     padding-top: 30px;
   }
 
@@ -10,12 +10,12 @@
     justify-content: space-between;
     margin-bottom: 55px;
 
-    @media (max-width: $lg) {
+    @include _992 {
       display: block;
       text-align: center;
     }
 
-    @media (max-width: $sm) {
+    @include _480 {
       margin-bottom: 30px;
     }
   }
@@ -23,13 +23,13 @@
   &__contact {
     min-width: 300px;
 
-    @media (max-width: $lg) {
+    @include _992 {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    @media (max-width: $md) {
+    @include _768 {
       margin-bottom: 15px;
     }
   }
@@ -39,7 +39,7 @@
     display: block;
     margin-bottom: 20px;
 
-    @media (max-width: $lg) {
+    @include _992 {
       margin-bottom: 10px;
     }
   }
@@ -48,20 +48,20 @@
     padding-top: 20px;
     min-width: 300px;
 
-    @media (max-width: $xl) {
+    @include _1200 {
       min-width: 150px;
     }
 
-    @media (max-width: $lg) {
+    @include _992 {
       display: inline-block;
       vertical-align: top;
     }
 
-    @media (max-width: $md) {
+    @include _768 {
       margin: 0 auto;
     }
 
-    @media (max-width: $sm) {
+    @include _480 {
       margin-bottom: 15px;
       text-align: center;
     }
@@ -75,7 +75,7 @@
     color: #1f2044;
     @extend %dmsans-700;
 
-    @media (max-width: $sm) {
+    @include _480 {
       margin-bottom: 10px;
     }
   }
@@ -87,7 +87,7 @@
   &__item {
     margin-bottom: 15px;
 
-    @media (max-width: $lg) {
+    @include _992 {
       margin-bottom: 5px;
     }
   }
@@ -95,7 +95,7 @@
   &__link {
     color: $grey;
 
-    @media (max-width: $lg) {
+    @include _992 {
       display: block;
       padding: 13px 0;
     }
@@ -105,7 +105,7 @@
     padding-top: 20px;
     min-width: 268px;
 
-    @media (max-width: $xl) {
+    @include _1200 {
       margin: 0 auto;
       max-width: 200px;
     }
@@ -124,7 +124,7 @@
     border-top: 1px solid #dae4e9;
     padding: 35px 0;
 
-    @media (max-width: $md) {
+    @include _768 {
       display: block;
       text-align: center;
     }
@@ -133,7 +133,7 @@
   &__copy {
     font-size: 14px;
 
-    @media (max-width: $md) {
+    @include _768 {
       margin-bottom: 15px;
     }
   }
@@ -141,7 +141,7 @@
   &__nav {
     display: flex;
 
-    @media (max-width: $md) {
+    @include _768 {
       justify-content: center;
     }
   }
@@ -162,7 +162,7 @@
     font-size: 14px;
     color: $grey;
 
-    @media (max-width: $lg) {
+    @include _992 {
       display: block;
       padding: 13px 5px;
     }
@@ -179,7 +179,7 @@
     line-height: 1.8;
     color: $grey;
 
-    @media (max-width: $lg) {
+    @include _992 {
       margin-bottom: 20px;
       max-width: 300px;
     }
@@ -193,7 +193,7 @@
     font-size: 14px;
     color: $grey;
 
-    @media (max-width: $lg) {
+    @include _992 {
       padding: 14px 0;
     }
   }
@@ -211,7 +211,7 @@
     background-color: $bg;
     transition: all 0.3s;
 
-    @media (max-width: $lg) {
+    @include _992 {
       min-height: 44px;
     }
 

@@ -10,12 +10,6 @@
 
     "order/order": [
       "custom-properties",
-      "dollar-variables",
-      {
-        "type": "at-rule",
-        "name": "include",
-        "hasBlock": false
-      },
       "declarations",
       {
         "type": "rule",
@@ -78,11 +72,7 @@
         "type": "rule",
         "selector": ".* &"
       },
-      {
-        "type": "at-rule",
-        "name": "include",
-        "hasBlock": true
-      }
+      "dollar-variables"
     ],
     "order/properties-alphabetical-order": null,
     "order/properties-order": [
