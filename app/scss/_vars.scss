@@ -7,6 +7,7 @@ $red: #f00;
 $grey: #7b7b7b;
 $bg: #fef7f0;
 $powdery: #feefe2;
+$black: #222933;
 
 @mixin _1200 {
   @media (max-width: 1200px) {
@@ -32,6 +33,11 @@ $powdery: #feefe2;
   }
 }
 
+%rubik-300 {
+  font-family: "Rubik";
+  font-weight: 300;
+}
+
 %rubik-400 {
   font-family: "Rubik";
   font-weight: 400;
@@ -40,6 +46,11 @@ $powdery: #feefe2;
 %rubik-500 {
   font-family: "Rubik";
   font-weight: 500;
+}
+
+%rubik-700 {
+  font-family: "Rubik";
+  font-weight: 700;
 }
 
 %dmsans-400 {
