@@ -1,5 +1,15 @@
 @font-face {
   src:
+    url("../fonts/Rubik-Lidht.woff2") format("woff2"),
+    url("../fonts/Rubik-Lidht.woff") format("woff");
+  font-family: "Rubik";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src:
     url("../fonts/Rubik-Regular.woff2") format("woff2"),
     url("../fonts/Rubik-Regular.woff") format("woff");
   font-family: "Rubik";
@@ -14,6 +24,16 @@
     url("../fonts/Rubik-Medium.woff") format("woff");
   font-family: "Rubik";
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url("../fonts/Rubik-Bold.woff2") format("woff2"),
+    url("../fonts/Rubik-Bold.woff") format("woff");
+  font-family: "Rubik";
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }

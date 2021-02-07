@@ -5,6 +5,8 @@ const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
+const nunjucksRender = require('gulp-nunjucks-render');
+const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const ttf2woff2 = require('gulp-ttf2woff2');
@@ -21,7 +23,6 @@ function browsersync() {
 
 function cleanDist() {
   return del('dist')
-
 };
 
 function fonts() {
@@ -49,7 +50,6 @@ function images() {
       ]
     ))
     .pipe(dest('dist/images'))
-
 };
 
 function scripts() {
@@ -66,6 +66,12 @@ function scripts() {
     .pipe(browserSync.stream())
 };
 
+function nunjucks() {
+  return src('app/*.njk')
+    .pipe(nunjucksRender())
+    .pipe(dest('app'))
+    .pipe(browserSync.stream())
+};
 
 function styles() {
   return src('app/scss/**/*.scss')
@@ -76,14 +82,15 @@ function styles() {
       }]
     }))
     .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(concat('style.min.css'))
+    .pipe(rename({
+      suffix : '.min'
+    }))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 version'],
       grid: true
     }))
     .pipe(dest('app/css'))
     .pipe(browserSync.stream())
-
 };
 
 function build() {
@@ -99,12 +106,14 @@ function build() {
 
 function wathing() {
   watch(['app/scss/**/*.scss'], styles);
+  watch(['app/**/*.njk', 'app/html/**/*.html'], nunjucks);
   watch(['app/fonts/**/*.ttf'], fonts);
   watch(['app/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/*.html']).on('change', browserSync.reload);
 };
 
 exports.styles = styles;
+exports.nunjucks = nunjucks;
 exports.wathing = wathing;
 exports.fonts = fonts;
 exports.browsersync = browsersync;
@@ -113,4 +122,4 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles, scripts, fonts, browsersync, wathing);
+exports.default = parallel(nunjucks ,styles, scripts, fonts, browsersync, wathing);
