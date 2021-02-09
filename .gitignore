@@ -5,7 +5,6 @@
 .tmp
 *.sublime
 .sass-cache
-components
 npm-debug.*
 
 dist/
