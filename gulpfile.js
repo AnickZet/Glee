@@ -56,7 +56,9 @@ function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/mixitup/dist/mixitup.js',
+    'node_modules/rateyo/src/jquery.rateyo.js',
     'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
     'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
     'app/js/main.js'
   ])
@@ -83,7 +85,7 @@ function styles() {
     }))
     .pipe(scss({ outputStyle: 'compressed' }))
     .pipe(rename({
-      suffix : '.min'
+      suffix: '.min'
     }))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 version'],
@@ -122,4 +124,4 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(nunjucks ,styles, scripts, fonts, browsersync, wathing);
+exports.default = parallel(nunjucks, styles, scripts, fonts, browsersync, wathing);

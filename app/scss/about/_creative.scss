@@ -10,7 +10,7 @@
   }
 
   &__wrap {
-    background-position: left bottom;
+    background-position: left top;
     background-size: 570px 675px;
     background-repeat: no-repeat;
 
@@ -24,9 +24,11 @@
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: auto;
-    padding-top: 66px;
-    padding-bottom: 93px;
+    min-height: 675px;
     max-width: 555px;
 
     @include _992 {
@@ -74,7 +76,9 @@
   }
 
   &__text {
+    overflow: hidden;
     margin-bottom: 64px;
+    max-height: 250px;
     line-height: 1.8;
     color: $darkblue;
 

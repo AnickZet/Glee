@@ -42,7 +42,9 @@
   }
 
   &__text {
+    overflow: hidden;
     margin-bottom: 38px;
+    max-height: 600px;
     line-height: 1.8;
     color: $darkblue;
 
@@ -54,18 +56,7 @@
   &__link {
     display: block;
     border-radius: 5px;
-    padding: 16px 50px 16px 16px;
-    max-width: 167px;
     @extend %poppins-700;
-
-    @include _768 {
-      padding: 12px 25px;
-      max-width: 200px;
-    }
-
-    @include _480 {
-      width: 150px;
-    }
   }
 
   &__cards {
@@ -94,9 +85,8 @@
   }
 
   &__img {
-    width: 370px;
-    height: 320px;
-    object-fit: contain;
+    min-height: 320px;
+    object-fit: cover;
     object-position: center;
   }
 

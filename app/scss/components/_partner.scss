@@ -49,4 +49,13 @@
   &__item {
     padding: 0 50px;
   }
+
+  &--small {
+    padding: 114px 0;
+
+    &::before {
+      top: 50px;
+      min-height: 250px;
+    }
+  }
 }

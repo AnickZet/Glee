@@ -107,8 +107,10 @@
   }
 
   &__title {
+    overflow: hidden;
     margin-bottom: 15px;
     max-width: 175px;
+    max-height: 60px;
     font-size: 20px;
     color: $dark;
 
