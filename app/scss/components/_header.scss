@@ -112,6 +112,7 @@
     &--active + .roll {
       @include _1200 {
         height: 100%;
+        transition: height 3s;
       }
     }
   }
@@ -132,13 +133,13 @@
   background-color: $light;
   transition: width 0.5s;
 
-  // не работает transition: height 3s; (не пойму что не так)
   @include _1200 {
     position: static;
     margin: 0 auto;
     width: 100%;
     height: 0;
     max-width: 100vw;
+    max-height: 140px;
     transition: height 3s;
   }
 
@@ -222,6 +223,26 @@
 
       @include _768 {
         margin: 0 10px;
+      }
+    }
+  }
+
+  &__link-grid {
+    background-color: $blue;
+
+    @include _768 {
+      display: none;
+    }
+
+    path {
+      fill: #fff;
+    }
+
+    &--active {
+      background-color: $light;
+
+      path {
+        fill: $darkblue;
       }
     }
   }
