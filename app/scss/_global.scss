@@ -231,6 +231,59 @@ body {
   clip: rect(0, 0, 0, 0);
 }
 
+.note {
+  border-top: 1px solid #e0e0e0;
+  font-size: 12px;
+  color: #222933;
+
+  &__date {
+    margin-right: 30px;
+
+    &::before {
+      background-image: url("../images/icons/calendar.svg");
+    }
+  }
+
+  &__author {
+    &::before {
+      background-image: url("../images/icons/user.svg");
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--white {
+    color: #fff;
+
+    .note__date::before {
+      background-image: url("../images/icons/calendar-w.svg");
+    }
+
+    .note__author::before {
+      background-image: url("../images/icons/user-w.svg");
+    }
+  }
+
+  &__date,
+  &__author {
+    position: relative;
+    display: inline-block;
+    padding-left: 22px;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -2px;
+      width: 17px;
+      height: 17px;
+    }
+  }
+}
+
 %clien {
   position: absolute;
   overflow: hidden;
